@@ -1,0 +1,638 @@
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+  *
+{
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Montserrat', sans-serif;
+}
+:root
+{
+      --main-color:#00c7fc;
+      --background-color:#637988;
+      --line-height:1.7;
+}
+
+ul
+{
+      list-style: none;
+}
+a
+{
+      text-decoration: none;
+}
+.container {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: auto;
+      margin-right: auto;
+}
+    /* Small */
+    @media (min-width: 768px) {
+      .container {
+        width: 750px;
+      }
+}
+    /* Medium */
+    @media (min-width: 992px) {
+      .container {
+        width: 970px;
+      }
+}
+    /* Large */
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px;
+      }
+}
+
+.special-heading
+{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 100px ;
+      padding-bottom: 20px;
+}
+
+.special-heading h2
+{
+      font-weight: 500;
+}
+.special-heading img
+{
+      margin-top: 10px;
+}
+
+header .container
+{
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      z-index: 3;
+      background: white;
+      width: 100%;
+}
+
+header .container .logo
+{
+      width: 150px;
+}
+
+header .container .logo img
+{
+      width: 100%;
+}
+
+header .container ul
+{
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      z-index: 3;
+}
+
+header .container  ul li
+{
+      padding: 20px;
+      font-size: 14px;
+}
+
+header .container  ul li a
+{
+      color: black;
+      transition: 0.2s;
+}
+
+header .container  ul li:nth-child(1) a
+{
+      color: var(--main-color);
+}
+
+header .container  ul li:hover a
+{
+      color: var(--main-color);
+}
+
+@media (min-width:768px) {
+      header .container i
+      {
+            display: none;
+      }
+}
+
+@media (max-width:767px)
+{
+      header .container
+      {
+            padding: 20px 15px;
+      }
+      header .container i
+      {
+            position: relative;
+      }
+      header .container  ul
+      {
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            top: 70px;
+            width: 100%;
+            padding: 0;
+            transform: translateY(20px);
+            display: none;
+      }
+      header .container i:hover +ul
+      {
+            display: flex;
+            transform: translateY(0);
+      }
+}
+
+.landing
+{
+      height: 100vh;
+      background-image: url(../img/header.jpg);
+      position: relative;
+}
+
+.landing::before
+{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 80%;
+}
+
+.landing .land
+{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% , -50%);
+      width: 500px;
+      max-width: 100%;
+      text-align: center;
+}
+
+.landing .land h2
+{
+      color: white;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: var(--line-height);
+      margin-bottom: 70px ;
+}
+
+.landing .land h6
+{
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+}
+
+.landing .land a
+{
+      padding: 20px 50px;
+      margin: 50px 20px;
+}
+
+.landing .land a:first-of-type
+{
+      border: 1px solid white;
+      border-radius: 5px;
+      color: white;
+      transition: 0.3s;
+}
+
+.landing .land a:first-of-type:hover
+{
+      background-color: white;
+      color: black;
+}
+
+.landing .land a:last-of-type
+{
+      border: 1px solid var(--main-color);
+      background-color: var(--main-color);
+      border-radius: 5px;
+      color: white;
+      transition: 0.3s;
+}
+
+.landing .land a:last-of-type:hover
+{
+      color: var(--main-color);
+      background-color: white;
+}
+
+.landing  a.arrow
+{
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 30px;
+      color: var(--main-color);
+      animation: arrow linear infinite 1.5s;
+}
+
+@keyframes arrow
+{
+      0%, 10%,20% ,50%,80% ,100%
+      {
+            transform: translateY(0);
+      }
+      40%,60%
+      {
+            transform: translateY(-15px);
+      }
+}
+@media (max-width:767px) {
+      .landing .land a
+      {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+      }      
+}
+
+.home
+{
+      background-color: #f4f4f4;
+}
+
+.home .container .info
+{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+}
+
+.home .container .info p
+{
+      color: var(--background-color);
+      line-height: var(--line-height);
+}
+
+.portfolio
+{
+      background-color: #f4f4f4;
+      padding-top: 50px;
+      padding-bottom: 50px;
+}
+
+.portfolio .images
+{
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+      max-width: 100%;
+}
+
+.portfolio .images .img img
+{
+      width: 100%;
+}
+
+.portfolio .images .img
+{
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+}
+
+.portfolio .images .img .overlay
+{
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      background-color:#04a3ce;
+      position: absolute;
+      bottom: -100%;
+      transition:all 0.3s ease-in;
+}
+
+.portfolio .images .img:hover .overlay
+{
+      display:flex;
+      flex-direction: column;
+      bottom: 5px;
+}
+
+.portfolio .images .img .overlay h6
+{
+      margin-bottom: 20px;
+      color: white;
+      font-weight: 500;
+}
+
+.portfolio .images .img .overlay p
+{
+      line-height: var(--line-height);
+      color: white;
+      font-weight: 500;
+      font-size: 14px;
+}
+
+.portfolio .images .img .overlay .icons
+{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+}
+.portfolio .images .img .overlay .icons i
+{
+      color: white;
+      margin:20px 5px ;
+}
+
+
+.services 
+{
+      background-color: #f4f4f4;
+}
+.services .container
+{
+      padding-top: 20px;
+      padding-bottom: 100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill ,minmax(300px , 1fr));
+      gap: 30px;
+}
+
+.services .container .serv
+{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      background-color: white;
+      padding: 58px 61px 98px;
+}
+.services .container .serv .img
+{
+      position: relative;
+      width: fit-content;
+      margin: 40px auto;
+}
+
+.services .container .serv .img::before
+{
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: 2px;
+      background-color: var(--main-color);
+}
+
+.services .container .serv h2
+{
+      font-weight: 400;
+      font-size: 15px;
+      margin: 50px auto ;
+      color: var(--background-color);
+}
+
+.services .container .serv p
+{
+      color: var(--background-color);
+      font-size: 13px;
+      line-height: var(--line-height);
+}
+
+.clints .container
+{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+}
+
+.clints .special-heading p
+{
+      text-align: center;
+      font-size: 14px;
+      color: var(--background-color);
+      line-height: var(--line-height);
+}
+
+.clints .special-heading h6
+{
+      font-weight: 400;
+      font-style: italic;
+}
+
+.clints .container .img
+{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+}
+
+.clints .container .img img
+{
+      margin: 20px 40px;
+}
+
+@media (max-width:767px) {
+      .clints .container .img
+      {
+            flex-direction: column;
+      }
+}
+
+.contact
+{
+      margin-top: 200px;
+      background-color: #101012;
+      display: flex;
+      justify-content: space-between;
+      padding: 100px 100px;
+}
+
+.contact .about
+{
+      border: 1px solid #707070;
+      padding:50px;
+      color: white;
+      max-width: 100%;
+      text-align: center;
+      width: fit-content;
+      margin-right: 20px;
+}
+
+.contact .about h2
+{
+      font-weight: 400;
+      position: relative;
+      width: fit-content;
+      margin: 50px auto;
+}
+.contact .about h2::before
+{
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50px;
+      width: calc(100% - 100px);
+      height: 2px;
+      background-color: var(--main-color);
+}
+.contact .about p
+{
+      margin: 100px auto;
+      font-size: 14px;
+      line-height: var(--line-height);
+}
+
+.contact .contact-section
+{
+      border: 1px solid #707070;
+      padding:50px;
+      color: white;
+      max-width: 100%;
+}
+
+.contact .contact-section >h2
+{
+      font-weight: 400;
+      position: relative;
+      width: fit-content;
+      margin: 50px auto;
+}
+
+.contact .contact-section .form
+{
+      width: 100%;
+      padding: 30px 20px;
+}
+
+.contact .contact-section .form .mail
+{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 20px;
+}
+.contact .contact-section .form .mail h2
+{
+      font-weight: 400;
+      font-size: 15px;
+}
+.contact .contact-section .form .mail input[type=text]
+{
+      background-color: #101012;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #707070;
+      color: white; 
+      padding: 5px;
+      transition: 0.3s;
+}
+
+.contact .contact-section .form .mail input[type=text]:focus
+{
+      color: var(--main-color);
+      border-color: var(--main-color);
+}
+
+.contact .contact-section .form .message
+{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      width: 100%;
+}
+.contact .contact-section .form .message h2
+{
+      font-weight: 400;
+      font-size: 15px;
+}
+.contact .contact-section .form .message input[type=text]
+{
+      background-color: #101012;
+      outline: none;
+      border: none;
+      border-bottom: 1px solid #707070;
+      color: white; 
+      padding: 5px;
+      transition: 0.3s;
+}
+
+.contact .contact-section .form .message input[type=text]:focus
+{
+      color: var(--main-color);
+      border-color: var(--main-color);
+}
+
+.contact .contact-section .form a
+{
+      color: var(--main-color);
+      display: flex;
+      justify-content: flex-end;
+      margin: 40px 0;
+}
+
+.contact .contact-section .form a:hover
+{
+      color: white;
+}
+
+@media (max-width:991px) {
+      .contact
+      {
+            padding: 30px;
+            flex-direction: column;
+      }
+      .contact .about
+      {
+            margin: 20px 0;
+            padding: 20px;
+      }
+      .contact .contact-section
+      {
+            padding: 10px;
+      }
+}
+
+footer
+{
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 20px;
+      align-items:center;
+      background-color: var(--main-color);
+}
+
+footer .info h2
+{
+      color: white;
+      font-size: 14px;
+      font-weight: 500;
+}
+
+footer .icons i
+{
+      margin: 0 20px;
+      color: white;
+}
+
+@media (max-width:767px) {
+      footer .icons i
+      {
+            margin: 0px 5px;
+      }
+}
